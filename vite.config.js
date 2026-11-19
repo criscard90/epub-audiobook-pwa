@@ -13,12 +13,12 @@ export default defineConfig({
         name: "EPUB Audiobook",
         short_name: "EPUB Audiobook",
         description: "Trasforma i tuoi EPUB in audiolibri. 100% lato client, offline-first, zero costi.",
-        start_url: "./",
+        start_url: "/epub-audiobook-pwa/",
         display: "standalone",
         orientation: "portrait",
         background_color: "#0f172a",
         theme_color: "#0f172a",
-        id: "./",
+        id: "/epub-audiobook-pwa/",
         icons: [
           {
             src: "public/icons/icon-192.svg",
@@ -35,7 +35,7 @@ export default defineConfig({
         ],
         file_handlers: [
           {
-            action: "./",
+            action: "/epub-audiobook-pwa/",
             accept: {
               "application/epub+zip": [".epub"],
             },
@@ -48,7 +48,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: true,
-    base: "./",
+    base: "/epub-audiobook-pwa/",
   },
   server: {
     port: 5173,
