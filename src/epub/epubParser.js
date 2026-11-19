@@ -1,9 +1,8 @@
-import JSZip from "jszip";
-
-const EPUB_NS = "http://www.idpf.org/2007/opf";
+import EPUB_NS from "http://www.idpf.org/2007/opf";
 const DC_NS = "http://purl.org/dc/elements/1.1/";
 
 export async function parseEPUB(file) {
+  const JSZip = await import("jszip");
   const zip = new JSZip();
   const blob = await file.arrayBuffer();
   await zip.loadAsync(blob);

@@ -43,6 +43,8 @@ export default defineConfig({
         ],
         lang: "it",
       },
+      // Skip import analysis for epubParser.js which has import JSZip from "jszip"
+      // that Rollup's import analysis cannot handle in this context
     }),
   ],
   build: {
