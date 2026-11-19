@@ -1,0 +1,22 @@
+{
+  "name": "epub-to-audiobook-pwa",
+  "version": "1.0.0",
+  "description": "PWA EPUB-to-Audiobook: 100% client-side, offline-first, zero-cost audiolibro player",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "idb": "^8.0.0",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "vite-plugin-pwa": "^0.20.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11"
+  }
+}
