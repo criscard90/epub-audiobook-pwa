@@ -3,19 +3,19 @@
 
 const CACHE_NAME = "epub-audiobook-v1";
 const STATIC_ASSETS = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/src/styles.css",
-  "/src/main.js",
-  "/src/db/storage.js",
-  "/src/epub/epubParser.js",
-  "/src/audio/ttsEngine.js",
-  "/src/audio/mediaSession.js",
-  "/src/ui/libraryView.js",
-  "/src/ui/playerView.js",
-  "/public/icons/icon-192.svg",
-  "/public/icons/icon-512.svg",
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./src/styles.css",
+  "./src/main.js",
+  "./src/db/storage.js",
+  "./src/epub/epubParser.js",
+  "./src/audio/ttsEngine.js",
+  "./src/audio/mediaSession.js",
+  "./src/ui/libraryView.js",
+  "./src/ui/playerView.js",
+  "./public/icons/icon-192.svg",
+  "./public/icons/icon-512.svg",
 ];
 
 // Install: precaching asset statici
@@ -54,7 +54,7 @@ self.addEventListener("fetch", (event) => {
   if (url.protocol !== "http:" && url.protocol !== "https:") return;
 
   // Strategia Cache-First per asset statici dell'app
-  if (STATIC_ASSETS.includes(url.pathname) || url.pathname.startsWith("/src/") || url.pathname.startsWith("/public/")) {
+  if (STATIC_ASSETS.includes(url.pathname) || url.pathname.includes("/src/") || url.pathname.includes("/public/")) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached;
